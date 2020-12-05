@@ -41,7 +41,7 @@
 
 		<form method="post">
 			
-			<h2>O Botao</h2>
+			<h2>Login</h2>
 
 			<input type="text" name="usuario" placeholder="usuario" required>
 

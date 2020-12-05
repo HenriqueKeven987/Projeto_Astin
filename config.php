@@ -15,9 +15,10 @@
 
 	spl_autoload_register($autoload);
 
+	//constante de diretorio painel
+	define('INCLUDE_PATH_PAINEL','http://localhost/Deposito_Astin/');
 
-	define('INCLUDE_PATH_PAINEL','http://10.10.113.42/projeto_astin/');
-
+	//banco de dados
 	define('HOST','localhost');
 	define('DATABASE','atendimento');
 	define('USER','root');
