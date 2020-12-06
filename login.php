@@ -19,7 +19,7 @@
 			if (isset($_POST['acao'])) {
 				$usuario = $_POST['usuario'];
 				$senha = $_POST['senha'];
-				$sql = Mysql::conectar()->prepare("SELECT * FROM `tb-admin.usuarios` WHERE usuario = ? AND senha = ?");
+				$sql = Mysql::conectar()->prepare("SELECT * FROM `tecnicos` WHERE login = ? AND senha = ?");
 				$sql->execute(array($usuario,$senha));
 
 				if ($sql->rowCount() == 1) {
