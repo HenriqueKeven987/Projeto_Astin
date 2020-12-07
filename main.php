@@ -34,13 +34,9 @@
 		<div class="clear"></div>
 	</header>
 
-	<section class="cadastro-equipamento">
-
-		<div class="box-content"></div>
-
-	</section><!--cadastro-equipamento-->
-	<div class="clear"></div>
-
+<?php
+	Painel::carregarPagina();
+?>
 
 </body>
 </html>
