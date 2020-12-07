@@ -27,8 +27,10 @@
 			<p>Sistema de Materias e Equipamentos</p>
 
 			<div class="loggout">
-				<a href="<?php echo INCLUDE_PATH_PAINEL;?>?loggout"><i class="fas fa-sign-out-alt"></i></a>
+				<a href="<?php echo INCLUDE_PATH_PAINEL;?>?loggout"><i class="fas fa-sign-out-alt"></i> Sair</a>
 			</div>
+
+
 
 		</div>
 		<div class="clear"></div>

@@ -99,7 +99,7 @@ header p{
 .box-content h2{
 	text-align: center;
 	color:#4682B4;
-	font-size: 30px; 
+	font-size: 25px; 
 	margin-top: 10px;
 }
 
@@ -138,11 +138,12 @@ div.campo-preenchimento input[type=submit]{
 
 .loggout{
 	float: right;
+	text-decoration: none;
 }
 
 .loggout a{
 	color: white;
-
+	text-decoration: none;
 	font-size: 20px;
 	padding: 0 5px;
 	cursor: pointer;
