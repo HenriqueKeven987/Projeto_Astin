@@ -1,3 +1,28 @@
+<?php
+
+	if (isset($_COOKIE['Lembrar'])) {
+		//cookie buscando no banco o login e senha
+		$usuario = $_COOKIE['usuario'];
+		$senha = $_COOKIE['senha'];
+		$sql = Mysql::conectar()->prepare("SELECT * FROM `tecnicos` WHERE login = ? AND senha = ?");
+		$sql->execute(array($usuario,$senha));
+		if ($sql->rowCount() == 1) {
+			//logado com sucesso
+			$info = $sql->fetch();
+			$_SESSION['login'] = true;
+			$_SESSION['usuario'] = $usuario;
+			$_SESSION['senha'] = $senha;
+			$_SESSION['cargo'] = $info['cargo']; 
+			$_SESSION['nome'] = $info['nome'];
+			$_SESSION['img'] = $info['img'];
+			header('location: '.INCLUDE_PATH_PAINEL);
+			die();
+		}
+	}	
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +52,14 @@
 					$_SESSION['login'] = true;
 					$_SESSION['usuario'] = $usuario;
 					$_SESSION['senha'] = $senha;
+
+					//cookie
+					if (isset($_POST['Lembrar'])) {
+						setcookie('Lembrar',true,time()+(60*60*24),'/');
+						setcookie('usuario',$usuario,time()+(60*60*24),'/');
+						setcookie('senha',$senha,time()+(60*60*24),'/');						
+					}
+
 					//direcionamento para a pagina de cadastro
 					header('Location: '.INCLUDE_PATH_PAINEL);
 					die();
@@ -47,7 +80,15 @@
 
 			<input type="password" name="senha" placeholder="senha" required>
 
-			<input type="submit" name="acao" value="Logar">
+			<div class="form-group-login left">
+				<input type="submit" name="acao" value="Logar">
+			</div>
+
+			<div class="form-group-login right">
+				<label>Lembrar-Me</label>
+				<input type="checkbox" name="Lembrar"/>
+			</div>
+			<div class="clear"></div>
 
 		</form>
 
