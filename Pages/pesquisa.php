@@ -1,11 +1,8 @@
 
 
+<div class="box-content left">
 
-
-
-<div class="box-content">
-
-		<h2>Pesquisar Equipamento</h2>
+		<h2><i class="fas fa-search"></i> Pesquisar Equipamento</h2>
 
 		<form method="post">
 			

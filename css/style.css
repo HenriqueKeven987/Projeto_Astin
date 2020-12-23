@@ -7,7 +7,7 @@
 
 html,body{
 	height: 100%;
-	background: #d3d3d3;
+	background: white;
 }
 
 .left{
@@ -99,20 +99,171 @@ header p{
 	color: #4682B4;
 }
 
-
-.box-content{
-	float: left;
-	width: 100%;
-	height: 400px;
-	background: white;
-	padding-left: 5px;
+.welcome{
+	transform: translate(-50%,-50%);
+	left: 50%;
+	top: 50%;
+	position: absolute;
 }
 
-.box-content h2{
+div h2{
 	text-align: center;
-	color:#4682B4;
-	font-size: 25px; 
-	margin-top: 10px;
+	margin-top: 5px;
+	color: #00BFFF;
+	font-size: 30px;
+}
+
+.box-content{
+	background: white;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 25px;
+	width: 100%;
+}
+
+.box-content form{
+	margin: 30px 0;
+}
+
+.box-content form label{
+	font-size: 17px;
+	font-weight: 300;
+	color: black;
+	display: block;
+}
+
+.box-content form input[type=text]{
+	margin-top: 8px;
+	font-size: 16px;
+	font-weight: normal;
+	color: black;
+	border:1px solid #ccc;
+	width: 100%;
+	height: 40px;
+	padding-left: 8px;
+}
+
+.box-content form textarea{
+	margin-top: 8px;
+	font-size: 16px;
+	font-weight: normal;
+	color: black;
+	border:1px solid #ccc;
+	width: 100%;
+	height: 150px;
+	padding-left: 8px;
+	resize: vertical;
+}
+
+.box-content form select{
+	margin-top: 8px;
+	font-size: 16px;
+	font-weight: normal;
+	color: black;
+	border:1px solid #ccc;
+	width: 100%;
+	height: 40px;
+	padding-left: 8px;
+}
+
+.box-content form input[type=file]{
+	margin-top: 8px;
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+}
+
+.box-content form input[type=submit]{
+	width: 90px;
+	height: 30px;
+	cursor: pointer;
+	margin-top: 8px;
+	font-size: 15px;
+	background: #00BFFF;
+	color:white;
+	border: 1px solid #5F9EA0;
+}
+
+.form-group{
+	margin: 10px 0;
+}
+
+.whaper-table{
+	overflow-x: auto;
+}
+
+.box-alert{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.sucesso{
+	background: #00FA9A;
+	color: #00BFFF;
+}
+
+.erro{
+	background:#FFA500;
+	color: #FF6347;
+} 
+
+
+/*Tabelas de depoimentos*/
+
+table{
+	font-weight: 300;
+	width: 100%;
+	min-width: 900px;
+	margin: 20px 0;
+	border-collapse: collapse;
+}
+ 
+
+table tr:nth-of-type(1){
+	font-size: 20px;
+	font-weight: bold;
+	border-bottom: 1px solid #333; 
+}
+
+table tr{
+	border-bottom: 1px solid #555;	
+}
+
+table tr td{
+	padding: 10px;
+}
+
+table a.btn{
+	text-decoration: none;
+	border-radius: 10%;
+	padding: 6px;
+	color: white;
+} 
+
+.order{background:#00BFFF;}
+.edit{background: #F4B03E;}
+.delete{background: #E05C4E;}
+
+.paginacao{
+	margin: 20px 0;
+	text-align: center;
+	
+}
+
+.paginacao a{
+	text-decoration: none;
+	font-size: 14px;
+	margin: 0 8px;
+	display: inline-block;
+	padding: 3px 4px;
+	border: 1px solid #ccc;
+	color: #666;
+}
+
+.paginacao a.page-select{
+	background: rgb(220,220,220);
 }
 
 div.campo-preenchimento{
