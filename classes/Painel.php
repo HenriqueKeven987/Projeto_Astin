@@ -3,7 +3,6 @@
 
 	class Painel{
 
-
 		public static function logado(){
 			return isset($_SESSION['login']) ? true : false;
 		}
@@ -76,11 +75,7 @@
 				$nome = $key;
 				$valor = $value;
 				if ($nome == 'acao' or $value == $arr['nome_tabela']) 
-					continue;
-				if ($value == '') {
-				 	$certo = false;
-				 	break;	
-				}
+					continue;	
 				$query.=",?";
 				$parametros[] = $value;
 			}
@@ -97,6 +92,56 @@
 			}
 			return $certo;
 		}//insert
+
+		public static function select($tabela,$query = '',$arr = ''){
+			if($query != ''){
+				$sql = Mysql::conectar()->prepare("SELECT * FROM `$tabela` WHERE $query");
+				$sql->execute($arr);
+			}else{
+				$sql = Mysql::conectar()->prepare("SELECT * FROM `$tabela`");
+				$sql->execute();
+			}
+			return $sql->fetch();
+		}//select
+
+		public static function update($arr,$single = false){
+			$certo = true;
+			$primeiro = false;
+			$nome_tabela = $arr['nome_tabela'];
+			$query = "UPDATE `$nome_tabela` SET ";
+
+			foreach ($arr as $key => $value) {
+				$nome = $key;
+				$valor = $value;
+				if ($nome == 'acao' || $nome == 'nome_tabela' || $nome == 'id') 
+					continue;
+				if ($value == '') {
+				 	$certo = false;
+				 	break;	
+				}
+				if ($primeiro == false) {
+					$primeiro = true;
+					$query.="$nome = ?";
+				}else{
+					$query.=",$nome = ?";
+				}
+				$parametros[] = $value;
+
+			}
+			
+			if($certo == true){
+				if($single == false){
+					$parametros[] = $arr['id'];
+					$sql = MySql::conectar()->prepare($query.' WHERE id=?');
+					$sql->execute($parametros);
+				}else{
+					$sql = MySql::conectar()->prepare($query);
+					$sql->execute($parametros);
+				}
+			}
+			
+			return $certo;
+		}//update
 
 		public static function orderItem($tabela,$order,$id){
 			if ($order == 'up') {

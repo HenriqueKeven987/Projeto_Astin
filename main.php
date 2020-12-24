@@ -59,6 +59,8 @@
 	</div>
 
 	<script src="<?php echo INCLUDE_PATH_PAINEL?>js/script_desing.js"></script>
+	<script src="<?php echo INCLUDE_PATH_PAINEL?>js/jquery.js"></script>
+	<script src="<?php echo INCLUDE_PATH_PAINEL?>js/jquery.mask.js"></script>
 
 </body>
 </html>

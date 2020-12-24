@@ -24,6 +24,11 @@
 	define('USER','root');
 	define('PASSWORD','');
 
+	function pesquisa($indice){
+
+		return Painel::$pesquisa[$indice];
+	}
+
 
 ?>
 
